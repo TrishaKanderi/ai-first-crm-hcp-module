@@ -1,0 +1,84 @@
+:root {
+  --ink: #1a2233;
+  --ink-soft: #5b6577;
+  --line: #e2e5eb;
+  --surface: #ffffff;
+  --canvas: #f6f7f9;
+  --brand: #2f5fdb;
+  --brand-soft: #eaf0ff;
+  --positive: #1c8a5a;
+  --positive-bg: #e7f7ef;
+  --negative: #c23b3b;
+  --negative-bg: #fdecec;
+  --neutral: #8a6d1f;
+  --neutral-bg: #fbf3e0;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 0;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.app-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.app-header .brand .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--brand);
+}
+
+.app-header .subtitle {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.screen-body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 20px 28px;
+}

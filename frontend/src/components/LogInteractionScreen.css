@@ -1,0 +1,25 @@
+.log-screen {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  height: 100%;
+  min-height: 0;
+}
+
+.log-screen .panel {
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .log-screen {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .log-screen .panel {
+    height: auto;
+    overflow: visible;
+  }
+}
