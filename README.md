@@ -66,7 +66,7 @@ largely independent tools. See `backend/app/agent/graph.py`.
 
 ### How `log_interaction` captures data (detail)
 
-`log_interaction(note: str)` → prompts `gemma2-9b-it` with a strict JSON-extraction
+`log_interaction(note: str)` → prompts `llama-3.1-8b-instant` with a strict JSON-extraction
 prompt asking for `hcp_name`, `interaction_type`, `topics_discussed`,
 `materials_shared`, `samples_distributed`, `sentiment`, `outcomes` → parses the JSON
 defensively (stripping code fences/prose the model might add) → creates an
@@ -89,7 +89,7 @@ trail of what was changed and why.
   so the design has no hidden dependencies).
 - **Backend:** FastAPI, SQLAlchemy.
 - **AI Agent Framework:** LangGraph (`create_react_agent`).
-- **LLMs:** Groq — `gemma2-9b-it` (primary, fast tool-routing/extraction),
+- **LLMs:** Groq — `llama-3.1-8b-instant` (primary, fast tool-routing/extraction),
   `llama-3.3-70b-versatile` (compliance screening).
 - **Database:** SQLite by default (zero config); swap in Postgres or MySQL by
   changing one env var (`DATABASE_URL`) — the code path is identical because it's
@@ -109,7 +109,7 @@ aivoa-crm-hcp/
 │   │   ├── schemas.py             # Pydantic request/response models
 │   │   ├── config.py              # env var loading
 │   │   ├── agent/
-│   │   │   ├── llm.py             # Groq client wrappers (gemma2-9b-it / llama-3.3-70b)
+│   │   │   ├── llm.py             # Groq client wrappers (llama-3.1-8b-instant / llama-3.3-70b)
 │   │   │   ├── tools.py           # the 5 LangGraph tools
 │   │   │   └── graph.py           # the LangGraph agent (create_react_agent)
 │   │   └── routers/
