@@ -6,7 +6,7 @@ Professional (HCP) either through a structured form or through a natural-languag
 chat with an AI assistant — both writing to the same underlying record.
 
 Built for the technical assignment: React + Redux frontend, FastAPI backend, a
-LangGraph agent backed by Groq (`gemma2-9b-it`, with `llama-3.3-70b-versatile` as a
+LangGraph agent backed by Groq (`llama-3.1-8b-instant`, with `llama-3.3-70b-versatile` as a
 fallback for the compliance check), and a SQL database (Postgres/MySQL-ready, SQLite
 by default for zero-config local runs).
 
