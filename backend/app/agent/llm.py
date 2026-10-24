@@ -1,11 +1,11 @@
 """
 Thin wrapper around Groq-hosted LLMs via langchain-groq.
 
-gemma2-9b-it is used as the default "workhorse" model for the agent's tool-routing
+openai/gpt-oss-20b is used as the default "workhorse" model for the agent's tool-routing
 and everyday extraction/summarization calls because it's fast and cheap, which
 matters for a field-rep-facing tool that needs snappy responses after every visit.
 
-llama-3.3-70b-versatile is wired in as a fallback for the one step that benefits
+openai/gpt-oss-120b is wired in as a fallback for the one step that benefits
 most from stronger reasoning: compliance / adverse-event flagging, where a missed
 detection has real regulatory consequences.
 """
