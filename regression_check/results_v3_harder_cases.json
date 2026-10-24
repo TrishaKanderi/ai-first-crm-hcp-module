@@ -1,0 +1,122 @@
+{
+  "extraction:ex1": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex2": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex3": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex4": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex5": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex6": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex7": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex8": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex9": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex10": {
+    "pass": false,
+    "why": [
+      "sentiment='Neutral'"
+    ]
+  },
+  "extraction:ex11": {
+    "pass": true,
+    "why": []
+  },
+  "extraction:ex12": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co1": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co2": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co3": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co4": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co5": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co6": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co7": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co8": {
+    "pass": true,
+    "why": []
+  },
+  "compliance:co9": {
+    "pass": false,
+    "why": [
+      "false alarm: [{'type': 'adverse_event_mention', 'detail': 'Statement that no patients have reported any side effects since starting Prodo-X.', 'severity': 'low'}]"
+    ]
+  },
+  "compliance:co10": {
+    "pass": true,
+    "why": []
+  },
+  "routing:ro1": {
+    "pass": true,
+    "why": []
+  },
+  "routing:ro2": {
+    "pass": true,
+    "why": []
+  },
+  "routing:ro3": {
+    "pass": true,
+    "why": []
+  },
+  "routing:ro4": {
+    "pass": true,
+    "why": []
+  },
+  "routing:ro5": {
+    "pass": true,
+    "why": []
+  },
+  "routing:ro6": {
+    "pass": true,
+    "why": []
+  },
+  "routing:ro7": {
+    "pass": true,
+    "why": []
+  }
+}
