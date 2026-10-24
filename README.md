@@ -6,7 +6,7 @@ Professional (HCP) either through a structured form or through a natural-languag
 chat with an AI assistant — both writing to the same underlying record.
 
 Built for the technical assignment: React + Redux frontend, FastAPI backend, a
-LangGraph agent backed by Groq (`llama-3.1-8b-instant`, with `llama-3.3-70b-versatile` as a
+LangGraph agent backed by Groq (`openai/gpt-oss-20b`, with `openai/gpt-oss-120b` as a
 fallback for the compliance check), and a SQL database (Postgres/MySQL-ready, SQLite
 by default for zero-config local runs).
 
@@ -66,7 +66,7 @@ largely independent tools. See `backend/app/agent/graph.py`.
 
 ### How `log_interaction` captures data (detail)
 
-`log_interaction(note: str)` → prompts `llama-3.1-8b-instant` with a strict JSON-extraction
+`log_interaction(note: str)` → prompts `openai/gpt-oss-20b` with a strict JSON-extraction
 prompt asking for `hcp_name`, `interaction_type`, `topics_discussed`,
 `materials_shared`, `samples_distributed`, `sentiment`, `outcomes` → parses the JSON
 defensively (stripping code fences/prose the model might add) → creates an
@@ -89,8 +89,8 @@ trail of what was changed and why.
   so the design has no hidden dependencies).
 - **Backend:** FastAPI, SQLAlchemy.
 - **AI Agent Framework:** LangGraph (`create_react_agent`).
-- **LLMs:** Groq — `llama-3.1-8b-instant` (primary, fast tool-routing/extraction),
-  `llama-3.3-70b-versatile` (compliance screening).
+- **LLMs:** Groq — `openai/gpt-oss-20b` (primary, fast tool-routing/extraction),
+  `openai/gpt-oss-120b` (compliance screening).
 - **Database:** SQLite by default (zero config); swap in Postgres or MySQL by
   changing one env var (`DATABASE_URL`) — the code path is identical because it's
   all SQLAlchemy.
@@ -109,7 +109,7 @@ aivoa-crm-hcp/
 │   │   ├── schemas.py             # Pydantic request/response models
 │   │   ├── config.py              # env var loading
 │   │   ├── agent/
-│   │   │   ├── llm.py             # Groq client wrappers (llama-3.1-8b-instant / llama-3.3-70b)
+│   │   │   ├── llm.py             # Groq client wrappers (openai/gpt-oss-20b / openai/gpt-oss-120b)
 │   │   │   ├── tools.py           # the 5 LangGraph tools
 │   │   │   └── graph.py           # the LangGraph agent (create_react_agent)
 │   │   └── routers/
@@ -178,3 +178,7 @@ try typing a note in the chat and watching the form fill in.
 - The agent keeps short-term conversational memory per session via LangGraph's
   `MemorySaver` checkpointer, so follow-up messages like "actually make that
   neutral" resolve against the interaction just discussed.
+- The task named gemma2-9b-it; Groq has since retired it and its replacement 
+  llama-3.1-8b-instant, so this build uses openai/gpt-oss-20b and openai/gpt-oss-120b.
+  A regression check (regression_check/) caught the retirement.
+
